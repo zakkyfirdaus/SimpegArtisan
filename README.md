@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## About Simpeg
+
+Sistem Informasi Kepegawaian ini akan terus dikembangkan oleh pengembang demi menunjang kebutuhan data pegawai pada instansi/perusahaan untuk menjadikan sebuah solusi efektif dan efisiensi pada proses manajemen didalam kepegawaian pada instansi/perusahaan. 
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
