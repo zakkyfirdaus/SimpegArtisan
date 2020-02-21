@@ -32,10 +32,10 @@
         <div class="container">
 
           <!-- 404 Error Text -->
-          <div class="text-center">
-            <div class="error mx-auto" data-text="404">404</div>
+          <div class="text-center mt-5">
+            <div class="error mx-auto middle" data-text="404">404</div>
             <p class="lead text-gray-800 mb-5">Page Not Found</p>
-            <p class="text-gray-500 mb-0">Halaman yang anda maksud tidak tersedia...</p>
+            <p class="text-gray-500 mb-3">Halaman yang anda maksud tidak tersedia...</p>
             <a href="/dashboard">&larr; Kembali ke Dashboard</a>
           </div>
 

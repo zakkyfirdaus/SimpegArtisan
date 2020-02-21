@@ -17,4 +17,9 @@ class Pegawai extends Model
 
         return asset('image/' . $this->avatar);
     }
+
+    public function inventaris()
+    {
+        return $this->belongsToMany(Inventaris::class);
+    }
 }
