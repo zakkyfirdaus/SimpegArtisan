@@ -1,15 +1,18 @@
 @extends('layouts.master')
 @section('content')
 
-        <h1>Edit Data Pegawai</h1>
         @if(session('sukses'))
         <div class="alert alert-success" role="alert">
             {{session('sukses')}}
         </div>
         @endif
-        <div class="row">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h1 class="m-0 font-weight-bold text-primary">Edit Data Pegawai</h1>
+            </div>
             <div class="col-10">
-            <form action="/pegawai/{{$pegawai->id}}/update" method="POST">
+            <form action="/pegawai/{{$pegawai->id}}/update" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama Depan</label>
@@ -45,11 +48,19 @@
                     <label for="exampleFormControlTextarea1">Alamat</label>
                     <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$pegawai->alamat}}</textarea>
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Foto Profil</label>
+                    <input type="file" name="avatar" class="form-control">
                 </div>
+                <button type="submit" class="btn btn-success btn-icon-split float-right" data-toggle="modal" data-target="#exampleModal">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Update Data Pegawai</span>
+                </button>
             </form>
             </div>
+            
         </div>
 
 @endsection
