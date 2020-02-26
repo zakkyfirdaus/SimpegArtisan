@@ -20,6 +20,6 @@ class Pegawai extends Model
 
     public function inventaris()
     {
-        return $this->belongsToMany(Inventaris::class);
+        return $this->belongsToMany(Inventaris::class)->withPivot(['harga']);
     }
 }
