@@ -52,7 +52,7 @@
                     <label for="exampleFormControlTextarea1">Foto Profil</label>
                     <input type="file" name="avatar" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success btn-icon-split float-right" data-toggle="modal" data-target="#exampleModal">
+                <button type="submit" class="btn btn-success btn-icon-split float-right mb-5" data-toggle="modal" data-target="#exampleModal">
                     <span class="icon text-white-50">
                         <i class="fas fa-check"></i>
                     </span>
