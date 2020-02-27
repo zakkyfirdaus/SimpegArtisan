@@ -19,6 +19,9 @@ class PegawaiController extends Controller
     public function create(Request $request)
     {
 
+        $this->validate($request, [
+            'nama_depan' => 'min:5'
+        ]);
         //insert ke tabel user
         $user = new \App\User;
         $user->role = 'pegawai';

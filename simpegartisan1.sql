@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Feb 2020 pada 07.39
+-- Waktu pembuatan: 24 Feb 2020 pada 23.16
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -36,6 +36,53 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `inventaris`
+--
+
+CREATE TABLE `inventaris` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(200) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `jabatan` varchar(56) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `inventaris`
+--
+
+INSERT INTO `inventaris` (`id`, `kode`, `nama`, `jabatan`, `created_at`, `updated_at`) VALUES
+(1, 'k-0001', 'Komputer', 'admin', '2020-02-21 17:33:30', '0000-00-00 00:00:00'),
+(2, 'p-0001', 'Printer', 'admin', '2020-02-21 17:33:30', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `inventaris_pegawai`
+--
+
+CREATE TABLE `inventaris_pegawai` (
+  `id` int(11) NOT NULL,
+  `pegawai_id` int(45) NOT NULL,
+  `inventaris_id` int(45) NOT NULL,
+  `harga` int(45) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `inventaris_pegawai`
+--
+
+INSERT INTO `inventaris_pegawai` (`id`, `pegawai_id`, `inventaris_id`, `harga`, `created_at`, `updated_at`) VALUES
+(1, 3, 1, 9000000, '2020-02-21 17:38:58', '0000-00-00 00:00:00'),
+(2, 3, 2, 2000000, '2020-02-21 17:38:58', '0000-00-00 00:00:00'),
+(3, 6, 2, 5000000, '2020-02-21 18:19:23', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -139,6 +186,18 @@ ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `inventaris`
+--
+ALTER TABLE `inventaris`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `inventaris_pegawai`
+--
+ALTER TABLE `inventaris_pegawai`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -172,6 +231,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `inventaris`
+--
+ALTER TABLE `inventaris`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `inventaris_pegawai`
+--
+ALTER TABLE `inventaris_pegawai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

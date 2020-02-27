@@ -68,20 +68,20 @@
                 <div class="modal-body">
                     <form action="/pegawai/create" method="POST">
                         {{csrf_field()}}
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('nama_depan') ? 'has-error' : '' }}">
                             <label for="exampleInputEmail1">Nama Depan</label>
                             <input name="nama_depan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">Kami tidak akan pernah membagikan nama depan Anda dengan orang lain.</small>
                         </div>
+                        @if ($errors->has('nama_depan'))
+                        <span class="block">{{ $errors->first('nama_depan') }}</span>
+                        @endif
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Belakang</label>
                             <input name="nama_belakang" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">Kami tidak akan pernah membagikan nama belakang Anda dengan orang lain.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">Kami tidak akan pernah membagikan Email Anda dengan orang lain.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jenis Kelamin</label>
