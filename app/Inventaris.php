@@ -11,6 +11,6 @@ class Inventaris extends Model
 
     public function pegawai()
     {
-        return $this->belongsToMany(Pegawai::class);
+        return $this->belongsToMany(Pegawai::class)->withPivot(['harga']);
     }
 }
