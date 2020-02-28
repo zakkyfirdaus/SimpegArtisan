@@ -23,6 +23,8 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -113,6 +115,35 @@
     <script src="{{asset('admin/js/demo/chart-pie-demo.js')}}"></script>
     <script src="{{asset('admin/js/demo/datatables-demo.js')}}"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if(Session::has('sukses'))
+            toastr.success("{{Session::get('sukses')}}", "Sukses")
+        @endif
+    </script>
+
+    <script>
+        $('.delete').click(function(){
+            var pegawai_id = $(this).attr('pegawai-id');
+            swal({
+                    title: "Apakah anda yakin?",
+                    text: "Akan menghapus data pegawai dengan id database "+ pegawai_id +" ?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        console.log(willDelete);
+                    if (willDelete) {
+                        window.location = "/pegawai/"+pegawai_id+"/delete";
+                    } else {
+                        swal("Anda telah membatalkan untuk menghapus data ini !");
+                    }
+                    });
+        });
+    </script>
 </body>
 
 </html>
