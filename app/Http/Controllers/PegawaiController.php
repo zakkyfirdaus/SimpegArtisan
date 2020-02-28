@@ -20,7 +20,10 @@ class PegawaiController extends Controller
     {
 
         $this->validate($request, [
-            'nama_depan' => 'min:5'
+            'nama_depan' => 'required|min:2',
+            'nama_belakang' => 'required|min:2',
+            'email' => 'required|email|unique:users',
+            'avatar' => 'mimes:jpeg,jpg,png'
         ]);
         //insert ke tabel user
         $user = new \App\User;
@@ -34,6 +37,12 @@ class PegawaiController extends Controller
         //insert ke tabel pegawai
         $request->request->add(['user_id' => $user->id]);
         $pegawai = \App\Pegawai::create($request->all());
+        if ($request->hasFile('avatar')) {
+            $request->file('avatar')->move('image/', $request->file('avatar')->getClientOriginalName());
+            $pegawai->avatar = $request->file('avatar')->getClientOriginalName();
+            $pegawai->save();
+        }
+
         return redirect('/pegawai')->with('sukses', 'Data pegawai berhasil ditambahkan');
     }
 
@@ -46,6 +55,12 @@ class PegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //dd($request->all());
+        $this->validate($request, [
+            'nama_depan' => 'required|min:2',
+            'nama_belakang' => 'required|min:2',
+            'email' => 'required|email|unique:users',
+            'avatar' => 'mimes:jpeg,jpg,png'
+        ]);
         $pegawai = \App\Pegawai::find($id);
         $pegawai->update($request->all());
         if ($request->hasFile('avatar')) {

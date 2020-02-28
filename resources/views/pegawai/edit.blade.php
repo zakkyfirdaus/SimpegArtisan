@@ -24,6 +24,13 @@
                     <input name="nama_belakang" value="{{$pegawai->nama_belakang}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted">Kami tidak akan pernah membagikan nama belakang Anda dengan orang lain.</small>
                 </div>
+                <div class="form-group{{ $errors->has('email') ? 'has-error' : '' }}">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ old('email') }}">
+                </div>
+                @if ($errors->has('email'))
+                <span class="block">{{ $errors->first('email') }}</span>
+                @endif
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
@@ -48,10 +55,13 @@
                     <label for="exampleFormControlTextarea1">Alamat</label>
                     <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$pegawai->alamat}}</textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group{{ $errors->has('avatar') ? 'has-error' : '' }}">
                     <label for="exampleFormControlTextarea1">Foto Profil</label>
                     <input type="file" name="avatar" class="form-control">
                 </div>
+                @if ($errors->has('avatar'))
+                <span class="block">{{ $errors->first('avatar') }}</span>
+                @endif
                 <button type="submit" class="btn btn-success btn-icon-split float-right mb-5" data-toggle="modal" data-target="#exampleModal">
                     <span class="icon text-white-50">
                         <i class="fas fa-check"></i>

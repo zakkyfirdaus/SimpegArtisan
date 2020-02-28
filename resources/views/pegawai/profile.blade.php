@@ -180,9 +180,10 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @php $i = 1; @endphp
                       @foreach($pegawai->inventaris as $inventaris)
                       <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{ $i++ }}</th>
                         <td>{{ $inventaris->kode }}</td>
                         <td>{{ $inventaris->nama }}</td>
                         <td>{{ $inventaris->jabatan }}</td>

@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Feb 2020 pada 23.16
+
+-- Waktu pembuatan: 27 Feb 2020 pada 13.13
+
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -173,7 +175,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Zakky', 'zakkyfirdaus97@yahoo.co.id', NULL, '$2y$10$NkS90YO9.N6Ftn4guO6.E.c1o6Sgj6B.yPY3aL7OGSFch/Z.VLtPm', 'SqGf8inarETipyZrMQu5SSe4kMS2rZkOm3Zsn69useIwVQYn4zSa10PzBBi9', '2020-02-20 01:22:36', '2020-02-20 01:22:36'),
-(6, 'pegawai', 'Admin', 'zakky188@gmail.com', NULL, '$2y$10$KLnBOOgr.h514fAzC.EXEOBgXlA1RVXxaYdFSu8e0oXqI6HYX/CGi', 'nV1zc8N8B0STDeaGma9KhuKBWyY0LaQoDUjSTEdC0HdX5KsbNoQKCWEQCkvk', '2020-02-20 23:03:11', '2020-02-20 23:03:11');
+
+(6, 'pegawai', 'Admin', 'zakky188@gmail.com', NULL, '$2y$10$KLnBOOgr.h514fAzC.EXEOBgXlA1RVXxaYdFSu8e0oXqI6HYX/CGi', 'IbwHrfWPmVxuzq4T9gwxnjtjfyIFKuOdfKg0qxFLQ4DUIT1A2MmbGt7gzhTG', '2020-02-20 23:03:11', '2020-02-20 23:03:11');
+
 
 --
 -- Indexes for dumped tables
