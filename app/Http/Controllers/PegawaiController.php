@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pegawai;
 
 class PegawaiController extends Controller
 {
@@ -46,13 +47,13 @@ class PegawaiController extends Controller
         return redirect('/pegawai')->with('sukses', 'Data pegawai berhasil ditambahkan');
     }
 
-    public function edit($id)
+    public function edit(Pegawai $pegawai)
     {
-        $pegawai = \App\Pegawai::find($id);
+
         return view('pegawai/edit', ['pegawai' => $pegawai]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Pegawai $pegawai)
     {
         //dd($request->all());
         $this->validate($request, [
@@ -61,7 +62,7 @@ class PegawaiController extends Controller
             'email' => 'required|email|unique:users',
             'avatar' => 'mimes:jpeg,jpg,png'
         ]);
-        $pegawai = \App\Pegawai::find($id);
+
         $pegawai->update($request->all());
         if ($request->hasFile('avatar')) {
             $request->file('avatar')->move('image/', $request->file('avatar')->getClientOriginalName());
@@ -71,16 +72,16 @@ class PegawaiController extends Controller
         return redirect('/pegawai')->with('sukses', 'Data telah berhasil diupdate');
     }
 
-    public function delete($id)
+    public function delete(Pegawai $pegawai)
     {
-        $pegawai = \App\Pegawai::find($id);
+
         $pegawai->delete($pegawai);
         return redirect('/pegawai')->with('sukses', 'Data telah berhasil dihapus');
     }
 
-    public function profile($id)
+    public function profile(Pegawai $pegawai)
     {
-        $pegawai = \App\Pegawai::find($id);
+
         return view('pegawai.profile', ['pegawai' => $pegawai]);
     }
 }

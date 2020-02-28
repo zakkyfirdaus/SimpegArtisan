@@ -24,10 +24,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/pegawai', 'PegawaiController@index');
     Route::post('/pegawai/create', 'PegawaiController@create');
-    Route::get('/pegawai/{id}/edit', 'PegawaiController@edit');
-    Route::post('/pegawai/{id}/update', 'PegawaiController@update');
-    Route::get('/pegawai/{id}/delete', 'PegawaiController@delete');
-    Route::get('/pegawai/{id}/profile', 'PegawaiController@profile');
+    Route::get('/pegawai/{pegawai}/edit', 'PegawaiController@edit');
+    Route::post('/pegawai/{pegawai}/update', 'PegawaiController@update');
+    Route::get('/pegawai/{pegawai}/delete', 'PegawaiController@delete');
+    Route::get('/pegawai/{pegawai}/profile', 'PegawaiController@profile');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin,pegawai']], function () {

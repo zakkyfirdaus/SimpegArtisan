@@ -1,13 +1,6 @@
 @extends('layouts.master')
 @section('content')
 
-
-            @if(session('sukses'))
-            <div class="alert alert-success" role="alert">
-                {{session('sukses')}}
-            </div>
-            @endif
-
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -46,7 +39,7 @@
                                     <td>{{$pegawai->alamat}}</td>
                                     <td>
                                         <a href="/pegawai/{{$pegawai->id}}/edit" class="btn btn-outline-warning mt-1">Edit</a>
-                                        <a href="/pegawai/{{$pegawai->id}}/delete" onclick="return confirm('Apakah yakin data ini ingin dihapus?')" class="btn btn-outline-danger mt-1">Hapus</a>
+                                        <a href="#" class="btn btn-outline-danger mt-1 delete" pegawai-id="{{ $pegawai->id }}">Hapus</a>
                                     </td>
                                 </tr>
 
@@ -133,3 +126,4 @@
         </div>
 
 @endsection
+
