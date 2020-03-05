@@ -4,7 +4,7 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h1 class="m-0 font-weight-bold text-primary">Informasi Data Pegawai</h1>
+                        <h1 class="m-0 font-weight-bold text-primary">Informasi Data Pegawai Sekretariat Utama</h1>
                         <button type="button" class="btn btn-primary btn-icon-split float-right" data-toggle="modal" data-target="#exampleModal">
                             <span class="icon text-white-50">
                                 <i class="fas fa-flag"></i>
@@ -21,7 +21,7 @@
                                         <th>Nama Depan</th>
                                         <th>Nama Belakang</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Agama</th>
+                                        <th>Satuan Kerja</th>
                                         <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -35,7 +35,7 @@
                                     <td><a href="/pegawai/{{ $pegawai->id }}/profile">{{$pegawai->nama_depan}}</a></td>
                                     <td><a href="/pegawai/{{ $pegawai->id }}/profile">{{$pegawai->nama_belakang}}</a></td>
                                     <td>{{$pegawai->jenis_kelamin}}</td>
-                                    <td>{{$pegawai->agama}}</td>
+                                    <td>{{$pegawai->satuan_kerja}}</td>
                                     <td>{{$pegawai->alamat}}</td>
                                     <td>
                                         <a href="/pegawai/{{$pegawai->id}}/edit" class="btn btn-outline-warning mt-1">Edit</a>
@@ -89,19 +89,20 @@
                             <label for="exampleFormControlSelect1">Jenis Kelamin</label>
                             <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
                                 <option value="Lainnya"{{ (old('jenis_kelamin') == 'Lainnya') ? ' selected' : ''}}>...</option>
-                                <option value="L"{{ (old('jenis_kelamin') == 'L') ? ' selected' : ''}}>Laki-Laki</option>
-                                <option value="P"{{ (old('jenis_kelamin') == 'P') ? 'selected' : ''}}>Perempuan</option>
+                                <option value="L"{{ (old('jenis_kelamin') == 'Laki-laki') ? ' selected' : ''}}>Laki-Laki</option>
+                                <option value="P"{{ (old('jenis_kelamin') == 'Perempuan') ? 'selected' : ''}}>Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Agama</label>
+                            <label for="exampleFormControlSelect1">Satuan Kerja</label>
                             <select name="agama" class="form-control" id="exampleFormControlSelect1">
-                                <option value="Lainnya"{{ (old('agama') == 'Lainnya') ? 'selected' : ''}}>...</option>
-                                <option value="Islam"{{ (old('agama') == 'Islam') ? 'selected' : ''}}>Islam</option>
-                                <option value="Kristen"{{ (old('agama') == 'Kristen') ? 'selected' : ''}}>Kristen</option>
-                                <option value="Hindu"{{ (old('agama') == 'Hindu') ? 'selected' : ''}}>Hindu</option>
-                                <option value="Budha"{{ (old('agama') == 'Budha') ? 'selected' : ''}}>Budha</option>
-                                <option value="Lainnya"{{ (old('agama') == 'Lainnya') ? 'selected' : ''}}>Lainnya</option>
+                                <option value="Lainnya"{{ (old('satuan_kerja') == 'Lainnya') ? 'selected' : ''}}>...</option>
+                                <option value="Sekretariat Utama"{{ (old('satuan_kerja') == 'Sekretariat Utama') ? 'selected' : ''}}>Sekretariat Utama</option>
+                                <option value="Deputi 1"{{ (old('satuan_kerja') == 'Deputi 1') ? 'selected' : ''}}>Deputi 1</option>
+                                <option value="Deputi 2"{{ (old('satuan_kerja') == 'Deputi 2') ? 'selected' : ''}}>Deputi 2</option>
+                                <option value="Deputi 3"{{ (old('satuan_kerja') == 'Deputi 3') ? 'selected' : ''}}>Deputi 3</option>
+                                <option value="Deputi 4"{{ (old('satuan_kerja') == 'Deputi 4') ? 'selected' : ''}}>Deputi 4</option>
+                                <option value="Deputi 5"{{ (old('satuan_kerja') == 'Deputi 5') ? 'selected' : ''}}>Deputi 5</option>
                             </select>
                         </div>
                         <div class="form-group">

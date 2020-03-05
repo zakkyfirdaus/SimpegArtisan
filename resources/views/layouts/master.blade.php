@@ -56,7 +56,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; e-Simpeg on Goverments {{ date('Y') }}</span>
+                        <span>Copyright &copy; Pusdatin on BPIP {{ date('Y') }}</span>
                     </div>
                     </div>
                 </footer>
