@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pegawai extends Model
 {
-    protected $table = 'pegawai';
-    protected $fillable = ['nama_depan', 'nama_belakang', 'jenis_kelamin', 'agama', 'alamat', 'avatar', 'user_id'];
+    protected $table = 'pegawaisektama';
+    protected $fillable = ['nama_depan', 'nama_belakang', 'jenis_kelamin', 'satuan_kerja', 'alamat', 'avatar', 'user_id'];
 
     public function getAvatar()
     {
@@ -18,8 +18,8 @@ class Pegawai extends Model
         return asset('image/' . $this->avatar);
     }
 
-    public function inventaris()
+    public function ket_satuan_kerja()
     {
-        return $this->belongsToMany(Inventaris::class)->withPivot(['harga']);
+        return $this->belongsToMany(KetSatuanKerja::class)->withPivot(['harga']);
     }
 }

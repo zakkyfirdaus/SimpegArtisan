@@ -58,8 +58,8 @@
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Agama</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pegawai->agama }}</div>
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Satuan Kerja</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pegawai->satuan_kerja }}</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-praying-hands fa-2x text-gray-500"></i>
@@ -69,7 +69,7 @@
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Mengubah data agama</div>
+                      <div class="dropdown-header">Mengubah data satuan kerja</div>
                       <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/pegawai/{{ $pegawai->id }}/edit">Edit Data</a>
                     </div>
@@ -86,7 +86,7 @@
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Jumlah Inventaris</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pegawai->inventaris->count() }}</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pegawai->ket_satuan_kerja->count() }}</div>
                   </div>
                   <div class="col-auto">
                     <i class="fas fa-dolly-flatbed fa-2x text-gray-500"></i>
@@ -173,21 +173,25 @@
                     <thead>
                       <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Kode</th>
-                        <th scope="col">Inventaris</th>
+                        <th scope="col">Organisasi</th>
+                        <th scope="col">Unit Kerja</th>
+                        <th scope="col">Sub Unit Kerja</th>
                         <th scope="col">Jabatan</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Golongan Ruang</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $i = 1; @endphp
-                      @foreach($pegawai->inventaris as $inventaris)
+                      @foreach($pegawai->ket_satuan_kerja as $ket_satuan_kerja)
                       <tr>
                         <th scope="row">{{ $i++ }}</th>
-                        <td>{{ $inventaris->kode }}</td>
-                        <td>{{ $inventaris->nama }}</td>
-                        <td>{{ $inventaris->jabatan }}</td>
-                        <td>{{ $inventaris->pivot->harga }}</td>
+                        <td>{{ $ket_satuan_kerja->organisasi }}</td>
+                        <td>{{ $ket_satuan_kerja->unit_kerja }}</td>
+                        <td>{{ $ket_satuan_kerja->sub_unit_kerja }}</td>
+                        <td>{{ $ket_satuan_kerja->jabatn }}</td>
+                        <td>{{ $ket_satuan_kerja->pivot->nip }}</td>
+                        <td>{{ $ket_satuan_kerja->golongan_ruang }}</td>
                       </tr>
                       @endforeach
                     </tbody>

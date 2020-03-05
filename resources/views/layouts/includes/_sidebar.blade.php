@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <i class="fab fa-gitkraken"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">E-Simpeg</div>
+        <div class="sidebar-brand-text mx-3">Agenda BPIP</div>
     </a>
 
     <!-- Divider -->
@@ -25,8 +25,68 @@
     @if(auth()->user()->role == 'admin')
     <li class="nav-item">
         <a class="nav-link" href="/pegawai">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Pegawai</span></a>
+            <i class="fas fa-laptop-code"></i>
+        <span>Sektama</span></a>
+    </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Tables -->
+    @if(auth()->user()->role == 'admin')
+    <li class="nav-item">
+        <a class="nav-link" href="/pegawai">
+            <i class="fas fa-share-alt"></i>
+        <span>Deputi 1</span></a>
+    </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Tables -->
+    @if(auth()->user()->role == 'admin')
+    <li class="nav-item">
+        <a class="nav-link" href="/pegawai">
+            <i class="fas fa-sync-alt"></i>
+        <span>Deputi 2</span></a>
+    </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Tables -->
+    @if(auth()->user()->role == 'admin')
+    <li class="nav-item">
+        <a class="nav-link" href="/pegawai">
+            <i class="fab fa-connectdevelop"></i>
+        <span>Deputi 3</span></a>
+    </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Tables -->
+    @if(auth()->user()->role == 'admin')
+    <li class="nav-item">
+        <a class="nav-link" href="/pegawai">
+            <i class="fas fa-university"></i>
+        <span>Deputi 4</span></a>
+    </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Tables -->
+    @if(auth()->user()->role == 'admin')
+    <li class="nav-item">
+        <a class="nav-link" href="/pegawai">
+            <i class="fas fa-chart-pie"></i>
+        <span>Deputi 5</span></a>
     </li>
     @endif
 
